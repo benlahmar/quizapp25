@@ -1,0 +1,6 @@
+<div>
+    {{qst.name}}
+    @for (o of qst.options; track $index) {
+        <app-option [opt]="o" ></app-option>
+    }
+</div>

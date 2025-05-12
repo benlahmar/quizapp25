@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row">
+         <div class="col-md-4">
+        <button type="button" class="btn btn-success" (click)="changemode('quiz')">Quiz</button>
+<button type="button" class="btn btn-danger" (click)="changemode('review')">Review</button>
+<button type="button" class="btn btn-warning" (click)="changemode('submit')">Submit</button>
+        </div>
+        </div>
+    <div class="row" [hidden]="mode!=='quiz'">
+        <div class="col-md-12">
+            
+   
+        <h1>{{data.name}}</h1>
+        <p>{{data.description}}</p>
+        @for (qt of data.questions; track $index) {
+
+            @if ($index==page) {
+            <div>
+                <h4>{{$index+1}}.{{qt.name}}</h4>
+                @for (op of qt.options; track $index) {
+                    <div>
+                        <input type="radio" id="{{op.id}}" name="{{qt.id}}" value="{{op.name}}"/>
+                        <label>{{op.name}}</label>
+                    </div>
+                }
+            </div>
+
+    <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" (click)="goto(page-1)" [hidden]="page==0" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" (click)="goto(1)" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" (click)="goto(2)" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" (click)="goto(page+1)" href="#" [hidden]="page>=data.questions.length-1">Next</a></li>
+  </ul>
+</nav>
+      }
+}
+</div>
+        </div>
+
+
+         <div class="row" [hidden]="mode!=='review'">
+        <div class="col-md-12">
+            
+   
+        <h1>{{data.name}}</h1>
+        <p>{{data.description}}</p>
+        @for (qt of data.questions; track $index) {
+
+        
+            <div>
+                <h4>{{$index+1}}.{{qt.name}}</h4>
+            
+            </div>
+
+        
+            
+        }
+        </div>
+                </div>
+
+
+
+ <div class="row" [hidden]="mode!=='submit'">
+        <div class="col-md-12">
+            
+   
+        <h1>{{data.name}}</h1>
+        <p>{{data.description}}</p>
+        @for (qt of data.questions; track $index) {
+
+           
+            <div>
+                <h4>{{$index+1}}.{{qt.name}}</h4>
+                @for (op of qt.options; track $index) {
+                    <div>
+                        <input disabled type="radio" id="{{op.id}}" name="{{qt.id}}" value="{{op.name}}"/>
+                        <label>{{op.name}}</label>
+                    </div>
+                }
+            </div>
+
+   
+      
+}
+</div>
+        </div>
+    
+    </div>

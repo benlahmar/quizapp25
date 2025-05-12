@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">                
+        <h1>{{data.name}}</h1>
+        <p>{{data.description}}</p>
+        @for (q of data.questions; track $index) {       
+            @if($index==page){
+            <app-question [qst]="q" ></app-question>
+            }
+        }
+        <app-pagination [total]="data.questions.length" (notif)="recuperer($event)"></app-pagination>
+</div>
+
+ 
