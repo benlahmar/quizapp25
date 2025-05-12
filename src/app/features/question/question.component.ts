@@ -14,4 +14,23 @@ export class QuestionComponent {
   @Input()
   qst:Question;
 
+  @Input()
+  mode:string
+  cls:string;
+
+  isselected()
+  {
+     let nb=this.qst.options.filter((o)=>o.isSelected==true).length;
+     if(nb==0 && this.mode=="review")
+     {
+       return'alert danger alert-danger'
+     }
+     else
+     {
+      if(nb!==0 && this.mode=="review")
+        return 'alert alert-success'  
+      else
+        return 'alert alert-primary'
+  }
+}
 }

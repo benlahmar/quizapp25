@@ -1,6 +1,8 @@
-<div>
+<div [class]="isselected()" >
     {{qst.name}}
+    @if (mode!=='review') {
     @for (o of qst.options; track $index) {
-        <app-option [opt]="o" ></app-option>
+        <app-option [opt]="o" [mode]="mode"></app-option>
     }
+}
 </div>

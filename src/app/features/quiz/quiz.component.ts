@@ -15,11 +15,17 @@ export class QuizComponent {
 
   data:Quiz=new Quiz(q);
   page:number=0;
-  
+  mode:string="quiz";
 recuperer(x:any)
 {
   
   this.page=x;
    console.log(x+"------"+this.page);
+}
+
+changemode(m:string)
+{
+  this.mode=m;
+  console.log(m);
 }
 }
