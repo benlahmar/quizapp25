@@ -1,4 +1,5 @@
 import { Question } from "./question";
+import { QuizConfig } from "./quiz-config";
 
 export class Quiz
 {
@@ -6,7 +7,7 @@ export class Quiz
     name:string;
     description:string;
     questions:Question[];
-
+    config:QuizConfig;
     constructor(data:any)
     {
         this.id=data.id;
@@ -17,6 +18,7 @@ export class Quiz
 
             this.questions.push(new Question(q));
         });
+        this.config=new QuizConfig(data.config);
 
     }
 }

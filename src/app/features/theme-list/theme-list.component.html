@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Theme List</h1>
+      <div class="row">
+        @for (theme of datatheme; track $index) {
+           
+            @if($index<p+3 && $index>=p){
+              
+           
+        <div  class="col-md-4">
+          <app-theme [data]="theme"></app-theme>
+        </div>
+         }
+    }
+      </div>
+      <app-pagination [total]="datatheme.length"  (notif)="recuperer($event)"></app-pagination>
+    </div>
+  </div>

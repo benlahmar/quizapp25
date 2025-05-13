@@ -6,6 +6,8 @@ export class Question
     name:string;
 
     options:Option[];
+    isresponse:boolean;
+    iscorrect:boolean;
     constructor(data:any)
     {
         this.id=data.id;
@@ -14,5 +16,7 @@ export class Question
         data.options.forEach((o:Option) => {
             this.options.push(new Option(o));
         });
+        this.isresponse=false;
+        this.iscorrect=false;
     }
 }

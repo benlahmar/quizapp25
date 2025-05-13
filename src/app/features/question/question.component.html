@@ -2,7 +2,13 @@
     {{qst.name}}
     @if (mode!=='review') {
     @for (o of qst.options; track $index) {
-        <app-option [opt]="o" [mode]="mode"></app-option>
+        <app-option [opt]="o" [mode]="mode" (notif)="getnotif($event)"></app-option>
+
     }
+     @if (mode=='submit') {
+    <p >
+        votre reponse est : {{iscorrect()?' correct':' incorrect'}}
+    </p>
+}
 }
 </div>

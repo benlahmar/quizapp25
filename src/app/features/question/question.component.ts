@@ -33,4 +33,25 @@ export class QuestionComponent {
         return 'alert alert-primary'
   }
 }
+
+iscorrect()
+{
+  return this.qst.options.every(o=>o.isSelected==o.isAnswer);
+}
+
+getnotif(x:any)
+{
+  let nb=this.qst.options.filter(o=>o.isSelected).length;
+  if(nb>0)
+    this.qst.isresponse=true;
+  else
+  this.qst.isresponse=false;
+
+  let cc= this.qst.options.every(o=>o.isSelected==o.isAnswer);
+  if(cc===true)
+    this.qst.iscorrect=true;
+  else
+  this.qst.iscorrect=false;
+  console.log(this.qst)
+}
 }
