@@ -1,0 +1,13 @@
+<div>
+      <h2>Counter</h2>
+      <!-- Afficher la valeur du compteur en utilisant l'async pipe pour souscrire à l'Observable -->
+      <p>Current Value: {{ count$ | async }}</p>
+
+      <!-- Boutons pour déclencher les actions -->
+      <button (click)="increment()">Increment</button>
+      <button (click)="decrement()">Decrement</button>
+      <button (click)="reset()">Reset to 0</button>
+
+      <!-- Exemple pour réinitialiser à une autre valeur -->
+      <button (click)="resetTo(100)">Reset to 100</button>
+    </div>

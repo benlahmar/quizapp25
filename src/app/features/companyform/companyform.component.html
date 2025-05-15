@@ -1,0 +1,18 @@
+<fieldset>
+   <legend>Company</legend>
+
+  <div class="mb-3">
+    <label for="company" class="form-label">Company name</label>
+    <input (focus)="verif()" #companyname="ngModel" name="companyname"  [(ngModel)]="company.name" type="text" class="form-control" required id="company" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="catchPhrase" class="form-label">catchPhrase</label>
+    <input (focus)="verif()"  #catchPhrase="ngModel" name="catchPhrase"  [(ngModel)]="company.catchPhrase" type="text" required class="form-control" id="catchPhrase">
+  </div>
+  <div class="mb-3">
+    <label for="bs" class="form-label">BS</label>
+    <input (focus)="verif()" #bs="ngModel" name="bs"  [(ngModel)]="company.bs" type="text" class="form-control" required id="bs">
+  </div>
+  
+</fieldset>

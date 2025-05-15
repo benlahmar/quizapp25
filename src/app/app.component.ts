@@ -4,11 +4,12 @@ import { q } from './share/dataquiz';
 import { Quiz1Component } from "./components/quiz1/quiz1.component";
 import { QuizComponent } from "./features/quiz/quiz.component";
 import { ThemeListComponent } from "./features/theme-list/theme-list.component";
+import { TopMenuComponent } from "./share/top-menu/top-menu.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Quiz1Component, QuizComponent, ThemeListComponent],
+  imports: [RouterOutlet, Quiz1Component, QuizComponent, ThemeListComponent, TopMenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

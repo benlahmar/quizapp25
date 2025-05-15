@@ -5,6 +5,12 @@
 <button type="button" class="btn btn-danger" (click)="changemode('review')">Review</button>
 <button type="button" class="btn btn-warning" (click)="changemode('submit')">Submit</button>
         </div>
+        <h3>{{txt}}</h3>
+        {{usname}}
+        <h1>{{username}}</h1>
+        <p> message recu.... {{message}}</p>
+        <button type="button" class="btn btn-primary" (click)="changemessage()">update</button>
+        <p>message via asy pipe {{service.message$| async }}</p>
         </div>
     <div class="row" [hidden]="mode!=='quiz'">
         <div class="col-md-12">

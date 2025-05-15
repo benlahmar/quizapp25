@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>User Form</h1>
+  <div class="row">
+    <div class="col-6">
+      <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input #name="ngModel" name="name"  [(ngModel)]="u.name" type="text" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    
+    <label for="exampleInputPassword1" class="form-label">Username</label>
+    <input #un="ngModel" name="un"   [(ngModel)]="u.username" type="text" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <app-companyform (notif)="recuper($event)"></app-companyform>
+  <button  (click)="addUser()" [disabled]="name.invalid || un.invalid || etat==false" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{{alpha}}
+@if(name.invalid && (name.dirty || name.touched)) {
+<div class="alert alert-danger" role="alert">
+    
+        Name must be at least 
+</div>
+
+}
+{{u | json}}
+    </div>
+    
+  </div>

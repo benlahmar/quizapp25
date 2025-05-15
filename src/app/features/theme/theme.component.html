@@ -4,5 +4,6 @@
     <h5 class="card-title">{{data.title}}</h5>
     <p class="card-text">{{data.description}}</p>
     <a href="/quiz/{{data.slug}}" class="btn btn-outline-primary btn-sm">Go somewhere</a>
+   <a [routerLink]="['/quiz',data.slug]" routerLinkActive="active" class="btn btn-outline-primary btn-sm">Go</a>
   </div>
 </div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>User Form</h1>
+  <div class="row">
+    <div class="col-6">
+      <form>
+        <div class="mb-3">
+    <label for="id" class="form-label">ID</label>
+    <input [formControl]="id"  name="id"  type="number" class="form-control" required id="id" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">id non negative</div>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Email address</label>
+    <input [formControl]="name"   name="name"  type="text" class="form-control" required id="name" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    
+    <label for="email" class="form-label">Username</label>
+    <input [formControl]="email"  name="email"   type="email" class="form-control" id="email">
+  </div>
+    <button (click)="addUser()" type="button" class="btn btn-primary">Submit</button>
+
+  </form>
+  </div>
+  </div>

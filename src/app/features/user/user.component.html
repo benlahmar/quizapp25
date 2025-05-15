@@ -1,0 +1,21 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Theme Users</h1>
+            <div class="row" >
+            @for (u of users; track $index) {
+                   <div class="card" style="width: 18rem;">
+  <img src="assets/images/user.png" class="card-img-top user-logo" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{u.name}}</h5>
+    <p class="card-text">{{u.username}}</p>
+    <p class="card-text">{{u.email}}</p>
+    <a [routerLink]="['/users',u.id]" class="btn btn-primary btn-sm">Profile</a>
+  </div>
+</div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
