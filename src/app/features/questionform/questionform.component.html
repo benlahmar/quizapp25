@@ -1,0 +1,20 @@
+<fieldset class="border p-3" [formGroup]="qform">
+    <legend class="w-auto">Question</legend>
+                <div class="mb-3" >
+                    <label for="id" class="form-label">ID:</label>
+                    <input  type="text" id="id" class="form-control" formControlName="id">
+                    <div *ngIf="qform.get('id')?.invalid && (qform.get('id')?.dirty || qform.get('id')?.touched)" class="text-danger">
+                        <div *ngIf="qform.get('id')?.errors?.['required']">ID is required.</div>
+                    </div>
+                </div>
+
+                <div class="mb-3"  >
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" id="name" class="form-control" formControlName="name">
+                    <div *ngIf="qform.get('name')?.invalid && (qform.get('name')?.dirty || qform.get('name')?.touched)" class="text-danger">
+                        <div *ngIf="qform.get('name')?.errors?.['required']">Name is required.</div>
+                        <div *ngIf="qform.get('name')?.errors?.['minlength']">Name must be at least 5 characters long.</div>
+                    </div>
+                </div>
+                <button (click)="addquestion()" class="btn btn-primary btn-sm">Add Question</button>
+                </fieldset>

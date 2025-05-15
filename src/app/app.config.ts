@@ -8,7 +8,7 @@ import { counterReducer } from './core/state/counter.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withDebugTracing(), withComponentInputBinding()),
+    provideRouter(routes,  withComponentInputBinding()),
     provideHttpClient(withFetch()),
     provideStore({
       // Ici, on dit que la "slice" d'état nommée 'counter' sera gérée par counterReducer

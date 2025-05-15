@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Quiz Form</h1>
+  <div class="row">
+    <div class="col-6">
+        <fieldset>
+            <legend>Quiz</legend>
+        <div>
+            {{msg}}
+            <p>
+                <button (click)="changemessage()" class="btn btn-primary btn-sm">update</button>
+            </p>
+           
+        </div>
+    <form [formGroup]="quizform" (ngSubmit)="send()">
+        <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="number" class="form-control" id="id" formControlName="id">
+            <div *ngIf="quizform.controls['id'].invalid" id="id" class="form-text alert alert-danger">error</div>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
+        </div>
+        <button type="button" (click)="addquestion()" class="btn btn-success btn-sm">Add Question</button>
+        @if(addq==true){
+        <app-questionform (notif)="getquestion($event)"></app-questionform>
+        }
+        <p>
+            {{quizform.value | json}}
+            {{quizform.valid}}
+            {{quizform.status}}
+        </p>
+        <p>{{quiz | json}}</p>
+        <button [disabled]="!quizform.valid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </fieldset>
+</div>
+</div>
+</div>

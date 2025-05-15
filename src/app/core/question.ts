@@ -13,9 +13,11 @@ export class Question
         this.id=data.id;
         this.name=data.name;
         this.options=[];
+           if(data.options!==undefined && data.options!==null){
         data.options.forEach((o:Option) => {
             this.options.push(new Option(o));
         });
+    }
         this.isresponse=false;
         this.iscorrect=false;
     }

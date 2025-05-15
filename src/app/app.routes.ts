@@ -33,6 +33,9 @@ export const routes: Routes = [
 
 
      },
+      {
+      path:'quizform',loadComponent:()=>import('./features/quiz-form/quiz-form.component').then(c=>c.QuizFormComponent)
+    },
  {
       path:'userformreactive',loadComponent:()=>import('./features/userformreactive/userformreactive.component').then(c=>c.UserformreactiveComponent)
     },

@@ -14,11 +14,12 @@ export class Quiz
         this.name=data.name;
         this.description=data.description;
         this.questions=[];
+        if(data.questions!==undefined && data.questions!==null){
         data.questions.forEach((q:Question) => {
 
             this.questions.push(new Question(q));
         });
         this.config=new QuizConfig(data.config);
-
+    }
     }
 }
