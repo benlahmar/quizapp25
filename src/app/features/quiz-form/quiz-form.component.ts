@@ -23,7 +23,7 @@ export class QuizFormComponent implements OnInit {
   msg:string="";
  // subscription:Subscription;
 
-  constructor(private service:ShareService) {
+  constructor(private readonly service:ShareService) {
 
   }
 
