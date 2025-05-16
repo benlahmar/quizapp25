@@ -20,4 +20,7 @@ describe('Quiz1Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  
 });

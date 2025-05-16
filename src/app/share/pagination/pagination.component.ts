@@ -14,10 +14,13 @@ export class PaginationComponent {
 
   @Input()
   total:number;
+
   p:number=0;
+
   goto(x:number)
   {
     this.p=x;
+    
     this.notif.emit(this.p);
   }
 }

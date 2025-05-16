@@ -15,5 +15,5 @@ import { MsgComponent } from "./components/teststate/msg/msg.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
- 
+ title="atos25";
 }
